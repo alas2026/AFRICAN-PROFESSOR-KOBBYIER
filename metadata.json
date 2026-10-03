@@ -1,0 +1,8 @@
+{
+  "name": "African Professor Kobbyier | Astrologer, Seer & Spiritual Consultant",
+  "description": "Contact African Professor Kobbyier for astrology, clairvoyance, spiritual consultation, traditional African spiritual guidance, and remote consultations.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
