@@ -13,19 +13,19 @@ export const Footer: React.FC<FooterProps> = ({ onOpenLegalModal }) => {
   const navT = TRANSLATIONS[language].nav;
 
   return (
-    <footer className="bg-[#090807] border-t border-[#d4af37]/20 pt-16 pb-12 text-[#b0a592]">
+    <footer className="bg-[#090807] border-t border-[#d4af37]/20 pt-12 sm:pt-16 pb-10 sm:pb-12 text-[#b0a592] w-full max-w-full">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Main Footer Row */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 pb-12 border-b border-[#d4af37]/15">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 sm:gap-10 pb-10 sm:pb-12 border-b border-[#d4af37]/15">
           
           {/* Brand Identity Column */}
-          <div className="lg:col-span-5 space-y-4">
+          <div className="lg:col-span-5 space-y-3 sm:space-y-4">
             <div>
               <span className="text-xs uppercase tracking-[0.25em] text-[#d4af37] font-semibold">
                 {t.role}
               </span>
-              <h2 className="text-xl sm:text-2xl font-bold font-display text-white tracking-wider mt-1">
+              <h2 className="text-lg sm:text-xl md:text-2xl font-bold font-display text-white tracking-wider mt-1">
                 {language === "fr" ? "PROFESSEUR AFRICAIN KOBBYIER" : "AFRICAN PROFESSOR KOBBYIER"}
               </h2>
               <div className="text-xs font-semibold uppercase tracking-widest text-[#fcedb6] mt-1">
@@ -33,7 +33,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenLegalModal }) => {
               </div>
             </div>
 
-            <p className="text-xs sm:text-sm text-[#cdc4b4] italic font-light">
+            <p className="text-xs sm:text-sm text-[#cdc4b4] italic font-light leading-relaxed">
               {t.quote}
             </p>
 
@@ -43,38 +43,38 @@ export const Footer: React.FC<FooterProps> = ({ onOpenLegalModal }) => {
           </div>
 
           {/* Quick Links Column */}
-          <div className="lg:col-span-3 space-y-3">
+          <div className="lg:col-span-3 space-y-2.5 sm:space-y-3">
             <h3 className="text-xs uppercase tracking-widest text-white font-semibold border-b border-[#d4af37]/20 pb-2">
               {t.navTitle}
             </h3>
-            <ul className="space-y-2 text-xs">
+            <ul className="space-y-1 text-xs">
               <li>
-                <a href="#home" className="hover:text-[#d4af37] transition-colors">
+                <a href="#home" className="hover:text-[#d4af37] transition-colors py-1.5 min-h-[36px] flex items-center">
                   {navT.home}
                 </a>
               </li>
               <li>
-                <a href="#about" className="hover:text-[#d4af37] transition-colors">
+                <a href="#about" className="hover:text-[#d4af37] transition-colors py-1.5 min-h-[36px] flex items-center">
                   {navT.about}
                 </a>
               </li>
               <li>
-                <a href="#services" className="hover:text-[#d4af37] transition-colors">
+                <a href="#services" className="hover:text-[#d4af37] transition-colors py-1.5 min-h-[36px] flex items-center">
                   {navT.services}
                 </a>
               </li>
               <li>
-                <a href="#how-it-works" className="hover:text-[#d4af37] transition-colors">
+                <a href="#how-it-works" className="hover:text-[#d4af37] transition-colors py-1.5 min-h-[36px] flex items-center">
                   {navT.howItWorks}
                 </a>
               </li>
               <li>
-                <a href="#consultation" className="hover:text-[#d4af37] transition-colors">
+                <a href="#consultation" className="hover:text-[#d4af37] transition-colors py-1.5 min-h-[36px] flex items-center">
                   {navT.consultation}
                 </a>
               </li>
               <li>
-                <a href="#contact" className="hover:text-[#d4af37] transition-colors">
+                <a href="#contact" className="hover:text-[#d4af37] transition-colors py-1.5 min-h-[36px] flex items-center">
                   {navT.contact}
                 </a>
               </li>
@@ -82,17 +82,17 @@ export const Footer: React.FC<FooterProps> = ({ onOpenLegalModal }) => {
           </div>
 
           {/* Contact Details Column */}
-          <div className="lg:col-span-4 space-y-4">
+          <div className="lg:col-span-4 space-y-3 sm:space-y-4">
             <h3 className="text-xs uppercase tracking-widest text-white font-semibold border-b border-[#d4af37]/20 pb-2">
               {t.contactTitle}
             </h3>
             
-            <div className="space-y-3 text-xs">
+            <div className="space-y-2 text-xs">
               <a
                 href="tel:920370153"
-                className="flex items-center gap-2.5 text-[#e5ddcf] hover:text-[#d4af37] transition-colors"
+                className="flex items-center gap-2.5 text-[#e5ddcf] hover:text-[#d4af37] transition-colors py-1.5 min-h-[44px]"
               >
-                <Phone className="w-4 h-4 text-[#d4af37]" />
+                <Phone className="w-4 h-4 text-[#d4af37] shrink-0" />
                 <span>{language === "fr" ? "Téléphone" : "Telephone"}: <strong className="text-white font-semibold">920 370 153</strong></span>
               </a>
 
@@ -100,9 +100,9 @@ export const Footer: React.FC<FooterProps> = ({ onOpenLegalModal }) => {
                 href="https://wa.me/351920755945"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2.5 text-[#e5ddcf] hover:text-[#25D366] transition-colors"
+                className="flex items-center gap-2.5 text-[#e5ddcf] hover:text-[#25D366] transition-colors py-1.5 min-h-[44px]"
               >
-                <MessageSquare className="w-4 h-4 text-[#25D366]" />
+                <MessageSquare className="w-4 h-4 text-[#25D366] shrink-0" />
                 <span>WhatsApp: <strong className="text-white font-semibold">920 755 945</strong></span>
               </a>
             </div>
@@ -115,27 +115,27 @@ export const Footer: React.FC<FooterProps> = ({ onOpenLegalModal }) => {
         </div>
 
         {/* Bottom Legal / Policy Bar */}
-        <div className="pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-[#7e7465]">
+        <div className="pt-6 sm:pt-8 flex flex-col md:flex-row items-center justify-between gap-3 sm:gap-4 text-xs text-[#7e7465] text-center md:text-left">
           <div>
             © {new Date().getFullYear()} African Professor Kobbyier. {t.rights}
           </div>
 
-          <div className="flex flex-wrap items-center gap-6">
+          <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-6">
             <button
               onClick={() => onOpenLegalModal("disclaimer")}
-              className="hover:text-[#d4af37] transition-colors"
+              className="hover:text-[#d4af37] transition-colors min-h-[44px] inline-flex items-center"
             >
               {t.disclaimer}
             </button>
-            <span>·</span>
+            <span className="select-none text-[#d4af37]/30">·</span>
             <button
               onClick={() => onOpenLegalModal("privacy")}
-              className="hover:text-[#d4af37] transition-colors"
+              className="hover:text-[#d4af37] transition-colors min-h-[44px] inline-flex items-center"
             >
               {t.privacy}
             </button>
-            <span>·</span>
-            <a href="#contact" className="hover:text-[#d4af37] transition-colors">
+            <span className="select-none text-[#d4af37]/30">·</span>
+            <a href="#contact" className="hover:text-[#d4af37] transition-colors min-h-[44px] inline-flex items-center">
               {navT.contact}
             </a>
           </div>

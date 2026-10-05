@@ -41,38 +41,38 @@ export const Services: React.FC<ServicesProps> = ({ onSelectServiceForBooking })
   });
 
   return (
-    <section id="services" className="py-20 bg-[#0e0d0b] relative">
+    <section id="services" className="py-16 sm:py-20 bg-[#0e0d0b] relative w-full max-w-full">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-12">
+        <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-12">
           <div className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.25em] text-[#d4af37] font-semibold mb-3">
-            <Sparkles className="w-3.5 h-3.5" />
+            <Sparkles className="w-3.5 h-3.5 text-[#d4af37]" />
             <span>{t.kicker}</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold font-display text-white tracking-tight mb-4">
+          <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold font-display text-white tracking-tight mb-3 sm:mb-4">
             {t.title}
           </h2>
-          <p className="text-[#c1b7a6] text-base font-light leading-relaxed">
+          <p className="text-[#c1b7a6] text-sm sm:text-base font-light leading-relaxed">
             {t.intro}
           </p>
 
           {/* Ethical Notice on Health */}
-          <div className="mt-4 p-3 rounded bg-[#181410] border border-[#d4af37]/20 inline-flex items-center gap-2 text-xs text-[#b0a592] text-left">
-            <ShieldAlert className="w-4 h-4 text-[#d4af37] shrink-0" />
-            <span>
+          <div className="mt-4 p-3 sm:p-3.5 rounded bg-[#181410] border border-[#d4af37]/20 inline-flex items-start sm:items-center gap-2 text-xs text-[#b0a592] text-left">
+            <ShieldAlert className="w-4 h-4 text-[#d4af37] shrink-0 mt-0.5 sm:mt-0" />
+            <span className="leading-relaxed">
               <strong className="text-white">{t.healthNoticeTitle}</strong> {t.healthNoticeText}
             </span>
           </div>
         </div>
 
-        {/* Filter Tabs */}
-        <div className="flex flex-wrap items-center justify-center gap-2 mb-10">
+        {/* Filter Tabs with >=44px touch targets on mobile */}
+        <div className="flex flex-wrap items-center justify-center gap-2 mb-8 sm:mb-10">
           {categories.map((cat) => (
             <button
               key={cat.id}
               onClick={() => setActiveFilter(cat.id)}
-              className={`px-4 py-2 text-xs font-semibold tracking-wider uppercase rounded transition-all duration-200 ${
+              className={`px-3.5 sm:px-4 py-2 min-h-[44px] text-xs font-semibold tracking-wider uppercase rounded transition-all duration-200 flex items-center justify-center active:scale-95 ${
                 activeFilter === cat.id
                   ? "bg-[#d4af37] text-[#12100d] shadow-md shadow-[#d4af37]/20"
                   : "bg-[#16130f] text-[#c1b7a6] hover:text-white border border-[#d4af37]/20 hover:border-[#d4af37]/40"
@@ -84,18 +84,18 @@ export const Services: React.FC<ServicesProps> = ({ onSelectServiceForBooking })
         </div>
 
         {/* Services Grid (12 Items) */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
           {filteredServices.map((service) => (
             <div
               key={service.id}
-              className="group bg-[#15120e] hover:bg-[#1a1612] border border-[#d4af37]/20 hover:border-[#d4af37]/60 rounded p-6 flex flex-col justify-between transition-all duration-300 shadow-md hover:shadow-xl relative overflow-hidden"
+              className="group bg-[#15120e] hover:bg-[#1a1612] border border-[#d4af37]/20 hover:border-[#d4af37]/60 rounded p-5 sm:p-6 flex flex-col justify-between transition-all duration-300 shadow-md hover:shadow-xl relative overflow-hidden"
             >
               {/* Subtle gold corner accent on hover */}
               <div className="absolute top-0 right-0 w-12 h-12 bg-gradient-to-bl from-[#d4af37]/15 to-transparent pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity" />
 
               <div>
                 {/* Header Icon + Category */}
-                <div className="flex items-center justify-between mb-4">
+                <div className="flex items-center justify-between mb-3 sm:mb-4">
                   <span className="text-2xl p-2.5 rounded bg-[#201b15] border border-[#d4af37]/25 shadow-inner">
                     {service.icon}
                   </span>
@@ -105,7 +105,7 @@ export const Services: React.FC<ServicesProps> = ({ onSelectServiceForBooking })
                 </div>
 
                 {/* Service Title */}
-                <h3 className="text-lg font-bold font-display text-white group-hover:text-[#fcedb6] transition-colors mb-2">
+                <h3 className="text-base sm:text-lg font-bold font-display text-white group-hover:text-[#fcedb6] transition-colors mb-2">
                   {service.title[language]}
                 </h3>
 
@@ -115,11 +115,11 @@ export const Services: React.FC<ServicesProps> = ({ onSelectServiceForBooking })
                 </p>
               </div>
 
-              {/* Action Buttons */}
-              <div className="pt-4 border-t border-[#d4af37]/15 flex items-center justify-between">
+              {/* Action Buttons with finger-friendly touch targets */}
+              <div className="pt-3.5 border-t border-[#d4af37]/15 flex items-center justify-between gap-2">
                 <button
                   onClick={() => setSelectedService(service)}
-                  className="text-xs font-semibold text-[#d4af37] hover:text-[#fcedb6] flex items-center gap-1 transition-colors"
+                  className="text-xs font-semibold text-[#d4af37] hover:text-[#fcedb6] min-h-[44px] py-1 px-2 -ml-2 rounded flex items-center gap-1 transition-colors active:scale-95"
                 >
                   <span>{t.learnDetails}</span>
                   <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
@@ -127,7 +127,7 @@ export const Services: React.FC<ServicesProps> = ({ onSelectServiceForBooking })
 
                 <button
                   onClick={() => onSelectServiceForBooking(service.title[language])}
-                  className="px-3 py-1.5 text-[11px] font-bold uppercase tracking-wider text-[#14120f] bg-[#d4af37] hover:bg-[#e6c65e] rounded transition-all active:scale-95"
+                  className="px-3.5 py-2 min-h-[44px] text-xs font-bold uppercase tracking-wider text-[#14120f] bg-[#d4af37] hover:bg-[#e6c65e] rounded transition-all active:scale-95 flex items-center justify-center shrink-0"
                 >
                   {t.consultBtn}
                 </button>
@@ -137,15 +137,15 @@ export const Services: React.FC<ServicesProps> = ({ onSelectServiceForBooking })
         </div>
 
         {/* Global Bottom Banner for Direct Contact */}
-        <div className="mt-12 text-center">
-          <p className="text-xs text-[#a39987] mb-3">
+        <div className="mt-10 sm:mt-12 text-center px-2">
+          <p className="text-xs text-[#a39987] mb-3 leading-relaxed">
             {t.specificConcern}
           </p>
           <a
             href="https://wa.me/351920755945?text=Hello%20Prof.%20Kobbyier%2C%20I%20have%20a%20private%20inquiry%20regarding%20consultations."
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#d4af37] hover:text-[#fcedb6] transition-colors"
+            className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#d4af37] hover:text-[#fcedb6] transition-colors min-h-[44px] px-3 py-1 rounded"
           >
             <MessageSquare className="w-4 h-4 text-[#25D366]" />
             <span>{t.directInquiry}</span>
@@ -156,33 +156,33 @@ export const Services: React.FC<ServicesProps> = ({ onSelectServiceForBooking })
 
       {/* Service Details Modal */}
       {selectedService && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm animate-fade-in">
-          <div className="relative w-full max-w-lg bg-[#14120e] border border-[#d4af37]/50 rounded p-6 sm:p-8 shadow-2xl overflow-hidden max-h-[90vh] overflow-y-auto">
-            {/* Close Button */}
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-black/85 backdrop-blur-sm animate-fade-in" role="dialog" aria-modal="true">
+          <div className="relative w-full max-w-lg bg-[#14120e] border border-[#d4af37]/50 rounded p-5 sm:p-7 shadow-2xl overflow-hidden max-h-[90vh] overflow-y-auto">
+            {/* Close Button with >=44px touch target */}
             <button
               onClick={() => setSelectedService(null)}
-              className="absolute top-4 right-4 p-1.5 text-[#b0a592] hover:text-white rounded hover:bg-[#201b15] transition-colors"
+              className="absolute top-3 right-3 sm:top-4 sm:right-4 w-11 h-11 min-w-[44px] min-h-[44px] flex items-center justify-center text-[#b0a592] hover:text-white rounded bg-[#1a1713] border border-[#d4af37]/30 transition-colors"
               aria-label="Close details"
             >
-              <X className="w-5 h-5" />
+              <X className="w-5 h-5 text-[#d4af37]" />
             </button>
 
             {/* Modal Content */}
-            <div className="flex items-center gap-3 mb-4">
-              <span className="text-3xl p-2 rounded bg-[#201b15] border border-[#d4af37]/30">
+            <div className="flex items-center gap-3 mb-4 pr-12">
+              <span className="text-2xl sm:text-3xl p-2 rounded bg-[#201b15] border border-[#d4af37]/30 shrink-0">
                 {selectedService.icon}
               </span>
               <div>
                 <span className="text-[11px] font-semibold uppercase tracking-widest text-[#d4af37]">
                   {selectedService.category[language]}
                 </span>
-                <h3 className="text-xl sm:text-2xl font-bold font-display text-white">
+                <h3 className="text-lg sm:text-xl md:text-2xl font-bold font-display text-white leading-tight">
                   {selectedService.title[language]}
                 </h3>
               </div>
             </div>
 
-            <p className="text-sm text-[#d6cdbd] leading-relaxed mb-6 font-light">
+            <p className="text-xs sm:text-sm text-[#d6cdbd] leading-relaxed mb-5 font-light">
               {selectedService.detailedDescription[language]}
             </p>
 
@@ -194,7 +194,7 @@ export const Services: React.FC<ServicesProps> = ({ onSelectServiceForBooking })
                 {selectedService.clientConcerns[language].map((concern, idx) => (
                   <li key={idx} className="flex items-start gap-2 text-xs text-[#b8ad9b]">
                     <Check className="w-4 h-4 text-[#d4af37] shrink-0 mt-0.5" />
-                    <span>{concern}</span>
+                    <span className="leading-relaxed">{concern}</span>
                   </li>
                 ))}
               </ul>
@@ -207,7 +207,7 @@ export const Services: React.FC<ServicesProps> = ({ onSelectServiceForBooking })
                   setSelectedService(null);
                   onSelectServiceForBooking(title);
                 }}
-                className="flex-1 py-3 text-xs font-bold uppercase tracking-wider text-[#14120f] bg-[#d4af37] hover:bg-[#e6c65e] rounded transition-all active:scale-95 text-center"
+                className="flex-1 py-3 px-4 min-h-[48px] text-xs font-bold uppercase tracking-wider text-[#14120f] bg-[#d4af37] hover:bg-[#e6c65e] rounded transition-all active:scale-95 text-center flex items-center justify-center"
               >
                 {t.modalBookArea}
               </button>
@@ -220,7 +220,7 @@ export const Services: React.FC<ServicesProps> = ({ onSelectServiceForBooking })
                 )}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="py-3 px-4 text-xs font-bold uppercase tracking-wider text-white border border-[#d4af37]/60 hover:bg-[#201b15] rounded transition-all flex items-center justify-center gap-1.5"
+                className="py-3 px-4 min-h-[48px] text-xs font-bold uppercase tracking-wider text-white border border-[#d4af37]/60 hover:bg-[#201b15] rounded transition-all flex items-center justify-center gap-1.5 active:scale-95 text-center"
               >
                 <MessageSquare className="w-3.5 h-3.5 text-[#25D366]" />
                 <span>{t.modalWhatsApp}</span>

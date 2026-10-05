@@ -47,7 +47,7 @@ function AppContent() {
   };
 
   return (
-    <div className="min-h-screen bg-[#0e0d0b] text-[#ede8df] flex flex-col font-sans selection:bg-[#d4af37] selection:text-black">
+    <div className="min-h-screen bg-[#0e0d0b] text-[#ede8df] flex flex-col font-sans selection:bg-[#d4af37] selection:text-black w-full max-w-full overflow-x-hidden">
       {/* Sticky Navigation Bar */}
       <Navbar onOpenBooking={handleOpenBooking} />
 
