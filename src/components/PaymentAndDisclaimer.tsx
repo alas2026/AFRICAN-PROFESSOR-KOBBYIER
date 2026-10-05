@@ -1,15 +1,14 @@
 import React from "react";
-import { CreditCard, AlertCircle, MessageSquare } from "lucide-react";
+import { CreditCard, AlertCircle, MessageSquare, ArrowDown } from "lucide-react";
 import { useLanguage } from "../context/LanguageContext";
 import { TRANSLATIONS } from "../data/translations";
 
 interface PaymentAndDisclaimerProps {
-  onOpenBooking: () => void;
+  onOpenBooking?: () => void;
   onOpenLegalModal: (tab: "disclaimer" | "privacy") => void;
 }
 
 export const PaymentAndDisclaimer: React.FC<PaymentAndDisclaimerProps> = ({
-  onOpenBooking,
   onOpenLegalModal
 }) => {
   const { language } = useLanguage();
@@ -17,15 +16,23 @@ export const PaymentAndDisclaimer: React.FC<PaymentAndDisclaimerProps> = ({
 
   const whatsAppInquireText = encodeURIComponent(
     language === "fr"
-      ? "Bonjour Professeur Kobbyier, je souhaiterais des précisions concernant les modalités de consultation et de règlement."
-      : "Hello Prof. Kobbyier, I would like to inquire about consultation terms and arrangements."
+      ? "Bonjour Professeur Kobbyier, je souhaiterais me renseigner au sujet d'une consultation spirituelle, des modalités et des tarifs."
+      : "Hello Prof. Kobbyier, I would like to inquire about a spiritual consultation, terms, and arrangements."
   );
+
+  const scrollToContact = (e: React.MouseEvent) => {
+    e.preventDefault();
+    const contactElem = document.getElementById("contact");
+    if (contactElem) {
+      contactElem.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
   return (
     <section id="consultation" className="py-16 sm:py-20 bg-[#0e0d0b] relative w-full max-w-full">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10 sm:space-y-12">
         
-        {/* Payment & Consultation Arrangements */}
+        {/* Consultation Information & Terms Card */}
         <div className="bg-[#15120e] border border-[#d4af37]/35 rounded p-5 sm:p-8 md:p-10 shadow-xl relative overflow-hidden">
           <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#d4af37] to-transparent" />
           
@@ -38,7 +45,7 @@ export const PaymentAndDisclaimer: React.FC<PaymentAndDisclaimerProps> = ({
               {t.title}
             </h2>
 
-            {/* Supplied Business Wording */}
+            {/* Supplied Business Policy Statement */}
             <div className="p-4 sm:p-5 rounded bg-[#1b1712] border border-[#d4af37]/25 text-left sm:text-center">
               <p className="text-xs sm:text-sm md:text-base text-[#e5ddcf] leading-relaxed font-light">
                 {t.suppliedText}
@@ -49,28 +56,33 @@ export const PaymentAndDisclaimer: React.FC<PaymentAndDisclaimerProps> = ({
               {t.clarifyText}
             </p>
 
-            <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-3.5 sm:gap-4 w-full">
-              <button
-                onClick={onOpenBooking}
-                className="w-full sm:w-auto px-8 py-3.5 min-h-[48px] text-xs sm:text-sm font-bold tracking-wider uppercase text-[#14120f] bg-[#d4af37] hover:bg-[#e6c65e] rounded transition-all active:scale-95 shadow-md shadow-[#d4af37]/15 flex items-center justify-center"
-              >
-                {t.contactBtn}
-              </button>
-
+            {/* Clear Consultation Button Hierarchy */}
+            <div className="pt-3 flex flex-col sm:flex-row items-center justify-center gap-3.5 sm:gap-4 w-full">
+              {/* PRIMARY BUTTON: Visually most prominent */}
               <a
                 href={`https://wa.me/351920755945?text=${whatsAppInquireText}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full sm:w-auto px-6 py-3.5 min-h-[48px] text-xs sm:text-sm font-bold tracking-wider uppercase text-white border border-[#d4af37]/60 hover:bg-[#201b15] rounded transition-all flex items-center justify-center gap-2 active:scale-95"
+                className="w-full sm:w-auto px-8 py-3.5 min-h-[48px] text-xs sm:text-sm font-bold tracking-wider uppercase text-[#14120f] bg-[#d4af37] hover:bg-[#e6c65e] rounded transition-all active:scale-95 shadow-lg shadow-[#d4af37]/20 flex items-center justify-center gap-2 group"
               >
-                <MessageSquare className="w-4 h-4 text-[#25D366]" />
+                <MessageSquare className="w-4 h-4 text-[#14120f] shrink-0" />
                 <span>{t.inquireWhatsApp}</span>
+              </a>
+
+              {/* SECONDARY BUTTON: Visually less prominent */}
+              <a
+                href="#contact"
+                onClick={scrollToContact}
+                className="w-full sm:w-auto px-6 py-3.5 min-h-[48px] text-xs sm:text-sm font-semibold tracking-wider uppercase text-[#d8cfc0] hover:text-white border border-[#d4af37]/45 hover:border-[#d4af37] hover:bg-[#d4af37]/10 rounded transition-all flex items-center justify-center gap-2 active:scale-95"
+              >
+                <span>{t.contactBtn}</span>
+                <ArrowDown className="w-3.5 h-3.5 text-[#d4af37]" />
               </a>
             </div>
           </div>
         </div>
 
-        {/* Client Disclaimer Card */}
+        {/* Official Client Disclaimer Card */}
         <div className="bg-[#12100d] border border-[#d4af37]/20 rounded p-5 sm:p-8">
           <div className="flex items-start gap-3.5 sm:gap-4">
             <div className="p-2 rounded bg-[#201b15] text-[#d4af37] shrink-0 mt-0.5">

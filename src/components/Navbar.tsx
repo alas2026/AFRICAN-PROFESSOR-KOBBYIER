@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from "react";
-import { Menu, X, Phone, MessageSquare } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { useLanguage } from "../context/LanguageContext";
 import { TRANSLATIONS } from "../data/translations";
 import { LanguageSwitcher } from "./LanguageSwitcher";
 
 interface NavbarProps {
-  onOpenBooking: () => void;
+  onOpenBooking?: () => void;
 }
 
-export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
+export const Navbar: React.FC<NavbarProps> = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const { language } = useLanguage();
@@ -42,97 +42,68 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 w-full ${
           isScrolled
             ? "bg-[#0e0d0b]/95 backdrop-blur-md border-b border-[#d4af37]/25 shadow-lg shadow-black/40 py-2.5 sm:py-3"
-            : "bg-[#0e0d0b]/85 backdrop-blur-sm border-b border-[#d4af37]/15 py-3 sm:py-4"
+            : "bg-[#0e0d0b]/85 backdrop-blur-sm border-b border-[#d4af37]/15 py-3.5 sm:py-4"
         }`}
       >
-        <div className="max-w-7xl mx-auto px-3.5 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between gap-2">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-between gap-4">
             
-            {/* Zone 1: Single text element wordmark */}
+            {/* Brand Logo / Wordmark */}
             <a
               href="#"
-              className="text-sm sm:text-base md:text-lg lg:text-xl font-bold tracking-wider font-display text-[#fcedb6] hover:text-[#d4af37] transition-colors truncate max-w-[200px] sm:max-w-none shrink"
+              className="text-base sm:text-lg lg:text-xl font-bold tracking-wider font-display text-[#fcedb6] hover:text-[#d4af37] transition-colors whitespace-nowrap shrink-0"
             >
               {t.brand}
             </a>
 
-            {/* Zone 2: Navigation Links (Strictly Desktop: 1024px and above) */}
-            <nav className="hidden lg:flex items-center gap-5 xl:gap-7 text-xs tracking-widest font-semibold uppercase text-[#d6cdbd]">
+            {/* Desktop Navigation Links (Visible on lg: 1024px and above) */}
+            <nav className="hidden lg:flex items-center gap-6 xl:gap-8 text-xs tracking-widest font-semibold uppercase text-[#d6cdbd]">
               <a
                 href="#home"
-                className="hover:text-[#d4af37] transition-colors py-1 relative after:absolute after:bottom-0 after:left-0 after:w-0 hover:after:w-full after:h-0.5 after:bg-[#d4af37] after:transition-all"
+                className="hover:text-[#d4af37] transition-colors py-1 relative after:absolute after:bottom-0 after:left-0 after:w-0 hover:after:w-full after:h-0.5 after:bg-[#d4af37] after:transition-all whitespace-nowrap shrink-0"
               >
                 {t.home}
               </a>
               <a
                 href="#about"
-                className="hover:text-[#d4af37] transition-colors py-1 relative after:absolute after:bottom-0 after:left-0 after:w-0 hover:after:w-full after:h-0.5 after:bg-[#d4af37] after:transition-all"
+                className="hover:text-[#d4af37] transition-colors py-1 relative after:absolute after:bottom-0 after:left-0 after:w-0 hover:after:w-full after:h-0.5 after:bg-[#d4af37] after:transition-all whitespace-nowrap shrink-0"
               >
                 {t.about}
               </a>
               <a
                 href="#services"
-                className="hover:text-[#d4af37] transition-colors py-1 relative after:absolute after:bottom-0 after:left-0 after:w-0 hover:after:w-full after:h-0.5 after:bg-[#d4af37] after:transition-all"
+                className="hover:text-[#d4af37] transition-colors py-1 relative after:absolute after:bottom-0 after:left-0 after:w-0 hover:after:w-full after:h-0.5 after:bg-[#d4af37] after:transition-all whitespace-nowrap shrink-0"
               >
                 {t.services}
               </a>
               <a
                 href="#how-it-works"
-                className="hover:text-[#d4af37] transition-colors py-1 relative after:absolute after:bottom-0 after:left-0 after:w-0 hover:after:w-full after:h-0.5 after:bg-[#d4af37] after:transition-all"
+                className="hover:text-[#d4af37] transition-colors py-1 relative after:absolute after:bottom-0 after:left-0 after:w-0 hover:after:w-full after:h-0.5 after:bg-[#d4af37] after:transition-all whitespace-nowrap shrink-0"
               >
                 {t.howItWorks}
               </a>
               <a
                 href="#consultation"
-                className="hover:text-[#d4af37] transition-colors py-1 relative after:absolute after:bottom-0 after:left-0 after:w-0 hover:after:w-full after:h-0.5 after:bg-[#d4af37] after:transition-all"
+                className="hover:text-[#d4af37] transition-colors py-1 relative after:absolute after:bottom-0 after:left-0 after:w-0 hover:after:w-full after:h-0.5 after:bg-[#d4af37] after:transition-all whitespace-nowrap shrink-0"
               >
                 {t.consultation}
               </a>
               <a
                 href="#contact"
-                className="hover:text-[#d4af37] transition-colors py-1 relative after:absolute after:bottom-0 after:left-0 after:w-0 hover:after:w-full after:h-0.5 after:bg-[#d4af37] after:transition-all"
+                className="hover:text-[#d4af37] transition-colors py-1 relative after:absolute after:bottom-0 after:left-0 after:w-0 hover:after:w-full after:h-0.5 after:bg-[#d4af37] after:transition-all whitespace-nowrap shrink-0"
               >
                 {t.contact}
               </a>
             </nav>
 
-            {/* Zone 3: Primary Actions (Strictly Desktop: 1024px and above) */}
-            <div className="hidden lg:flex items-center gap-3 shrink-0">
+            {/* Desktop Language Switcher (Only EN / FR) */}
+            <div className="hidden lg:flex items-center shrink-0">
               <LanguageSwitcher />
-
-              <a
-                href="https://wa.me/351920755945?text=Hello%20Prof.%20Kobbyier%2C%20I%20would%20like%20to%20request%20a%20spiritual%20consultation."
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-1.5 px-3.5 py-2 text-xs font-semibold text-[#1e1b15] bg-[#d4af37] hover:bg-[#e2c159] transition-all rounded shadow-sm hover:shadow-md whitespace-nowrap active:scale-95 min-h-[38px]"
-              >
-                <MessageSquare className="w-3.5 h-3.5" />
-                <span>{t.whatsAppNow}</span>
-              </a>
-
-              <button
-                onClick={onOpenBooking}
-                className="px-3.5 py-2 text-xs font-semibold uppercase tracking-wider text-[#ede8df] border border-[#d4af37]/60 hover:bg-[#d4af37]/10 transition-colors rounded whitespace-nowrap min-h-[38px]"
-              >
-                {t.book}
-              </button>
             </div>
 
-            {/* Mobile / Tablet Controls (Strictly Below 1024px: phones & tablets) */}
-            <div className="flex lg:hidden items-center gap-1.5 sm:gap-2 shrink-0">
-              {/* Language Switcher */}
+            {/* Mobile / Tablet Controls (Below 1024px) */}
+            <div className="flex lg:hidden items-center gap-2 shrink-0">
               <LanguageSwitcher />
-
-              {/* Mobile WhatsApp direct trigger with >=44px touch target */}
-              <a
-                href="https://wa.me/351920755945"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-11 h-11 min-w-[44px] min-h-[44px] flex items-center justify-center text-[#1e1b15] bg-[#d4af37] hover:bg-[#e2c159] rounded transition-all active:scale-95 shadow-sm"
-                aria-label="WhatsApp Prof. Kobbyier"
-              >
-                <MessageSquare className="w-4 h-4" />
-              </a>
 
               {/* Hamburger Button with >=44px touch target */}
               <button
@@ -152,18 +123,18 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
       {/* Mobile Drawer (Below 1024px) */}
       {isOpen && (
         <div className="fixed inset-0 z-50 lg:hidden" role="dialog" aria-modal="true">
-          {/* Backdrop with quick tap-to-close */}
+          {/* Backdrop with tap-to-close */}
           <div
             className="fixed inset-0 bg-black/85 backdrop-blur-sm transition-opacity"
             onClick={closeMenu}
             aria-hidden="true"
           />
 
-          {/* Slide-in drawer container with finger-friendly spacing */}
+          {/* Slide-in drawer container */}
           <div className="fixed top-0 right-0 bottom-0 w-full sm:w-80 max-w-[85vw] bg-[#12100d] border-l border-[#d4af37]/35 p-5 sm:p-6 flex flex-col justify-between shadow-2xl overflow-y-auto">
             
             <div className="space-y-5">
-              {/* Drawer Top Row: Title & Distinct Close Button */}
+              {/* Drawer Top Row: Title & Close Button */}
               <div className="flex items-center justify-between border-b border-[#d4af37]/20 pb-3 pt-1">
                 <span className="text-xs uppercase tracking-widest font-bold text-[#d4af37]">
                   {language === "fr" ? "Menu Principal" : "Main Menu"}
@@ -186,7 +157,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
                 <LanguageSwitcher />
               </div>
 
-              {/* Navigation Links with large comfortable touch targets */}
+              {/* All Navigation Links on Mobile */}
               <nav className="flex flex-col space-y-1 pt-2">
                 <a
                   href="#home"
@@ -233,25 +204,11 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
               </nav>
             </div>
 
-            {/* Bottom Contact Actions in Drawer */}
-            <div className="space-y-3 pt-6 border-t border-[#d4af37]/20 mt-4">
-              <a
-                href="tel:920370153"
-                className="flex items-center justify-center gap-2 w-full py-3 px-4 text-xs font-semibold text-[#f5ebd7] border border-[#d4af37]/50 hover:bg-[#1a1713] rounded min-h-[44px] transition-colors active:scale-95"
-              >
-                <Phone className="w-4 h-4 text-[#d4af37]" />
-                <span>920 370 153</span>
-              </a>
-
-              <a
-                href="https://wa.me/351920755945?text=Hello%20Prof.%20Kobbyier%2C%20I%20would%20like%20to%20request%20a%20spiritual%20consultation."
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center justify-center gap-2 w-full py-3 px-4 text-xs font-bold text-[#14120f] bg-[#d4af37] hover:bg-[#e2c159] rounded min-h-[44px] transition-all active:scale-95 shadow-md"
-              >
-                <MessageSquare className="w-4 h-4" />
-                <span>WhatsApp: 920 755 945</span>
-              </a>
+            {/* Bottom brand note */}
+            <div className="pt-6 border-t border-[#d4af37]/20 text-center">
+              <span className="text-[11px] uppercase tracking-widest text-[#a89d8b]">
+                {t.brand}
+              </span>
             </div>
 
           </div>
