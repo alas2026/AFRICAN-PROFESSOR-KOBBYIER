@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { LanguageProvider, useLanguage } from "./context/LanguageContext";
+import { useState } from "react";
+import { LanguageProvider } from "./context/LanguageContext";
 import { Navbar } from "./components/Navbar";
 import { Hero } from "./components/Hero";
 import { About } from "./components/About";
@@ -14,7 +14,6 @@ import { FloatingWhatsApp } from "./components/FloatingWhatsApp";
 import { LegalModal } from "./components/LegalModal";
 
 function AppContent() {
-  const { language } = useLanguage();
   const [preselectedService, setPreselectedService] = useState<string>("");
   const [legalModalState, setLegalModalState] = useState<{
     isOpen: boolean;

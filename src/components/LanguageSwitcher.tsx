@@ -1,15 +1,13 @@
 import React from "react";
-import { useLanguage, Language } from "../context/LanguageContext";
+import { useLanguage } from "../context/LanguageContext";
 import { Globe } from "lucide-react";
 
 interface LanguageSwitcherProps {
   className?: string;
-  isCompact?: boolean;
 }
 
 export const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({
-  className = "",
-  isCompact = false
+  className = ""
 }) => {
   const { language, setLanguage } = useLanguage();
 
