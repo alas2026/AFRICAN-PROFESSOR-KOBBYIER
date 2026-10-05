@@ -2,7 +2,7 @@ import React from "react";
 import { Shield, Sparkles, UserCheck, Globe, Award } from "lucide-react";
 import { useLanguage } from "../context/LanguageContext";
 import { TRANSLATIONS } from "../data/translations";
-import portraitImg from "../assets/images/1001302447.jpg";
+import portraitImg from "../assets/images/african.jpg";
 
 interface AboutProps {
   onOpenBooking: () => void;
