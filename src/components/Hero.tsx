@@ -24,7 +24,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking }) => {
       <div className="absolute inset-0 z-0">
         <img
           src={heroImg}
-          alt="African spiritual consultation sanctuary with celestial astrolabe and star charts"
+          alt="Spiritual consultation sanctuary and tranquil Islamic consultation room"
           className="w-full h-full object-cover object-center scale-105 transform opacity-35 filter brightness-75 contrast-125"
           referrerPolicy="no-referrer"
         />
