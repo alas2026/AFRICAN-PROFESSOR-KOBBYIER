@@ -40,19 +40,19 @@ export const About: React.FC<AboutProps> = ({ onOpenBooking }) => {
                   className="w-full h-full object-cover object-center"
                   referrerPolicy="no-referrer"
                 />
-                
-                {/* Fallback scrim and label badge */}
-                <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#0e0d0b] via-[#0e0d0b]/85 to-transparent p-4 sm:p-5 text-center">
-                  <div className="text-[11px] sm:text-xs uppercase tracking-widest text-[#d4af37] font-semibold mb-1">
-                    {language === "fr" ? "Praticien Spirituel & Astrologue" : "Spiritual Practitioner & Astrologer"}
-                  </div>
-                  <h3 className="text-lg sm:text-xl font-bold font-display text-white tracking-wide">
-                    {t.portraitLabel}
-                  </h3>
-                  <p className="text-xs text-[#c8bfaf] mt-0.5 sm:mt-1 font-light">
-                    {t.portraitSub}
-                  </p>
+              </div>
+
+              {/* Dignified title badge placed cleanly beneath the photo */}
+              <div className="mt-4 p-4 rounded bg-[#171410] border border-[#d4af37]/25 text-center shadow-md">
+                <div className="text-[11px] sm:text-xs uppercase tracking-widest text-[#d4af37] font-semibold mb-1">
+                  {language === "fr" ? "Praticien Spirituel & Astrologue" : "Spiritual Practitioner & Astrologer"}
                 </div>
+                <h3 className="text-base sm:text-lg font-bold font-display text-white tracking-wide">
+                  {t.portraitLabel}
+                </h3>
+                <p className="text-xs text-[#c8bfaf] mt-0.5 font-light">
+                  {t.portraitSub}
+                </p>
               </div>
             </div>
 
