@@ -238,7 +238,7 @@ export const TRANSLATIONS: Record<"en" | "fr", TranslationSchema> = {
       portraitLabel: "Professor Kobbyier",
       portraitSub: "Grande · Seer · African Spiritual Scientist",
       portraitCaption: "Dedicated one-on-one private sessions & strict confidentiality",
-      p1: "Professor Kobbyier presents himself as an experienced African spiritual practitioner offering astrology, clairvoyance, spiritual consultation, and traditional spiritual practices. Rooted in ancestral knowledge handed down across generations, he applies his deep study of life cycles, celestial dynamics, and traditional spiritual science to guide individuals through moments of doubt, transition, and difficulty.",
+      p1: "Professor Kobbyier is an experienced African spiritual practitioner specializing in astrology, clairvoyance, spiritual consultation, and traditional spiritual practices. Drawing on ancestral knowledge passed down through generations, he combines his understanding of life cycles, celestial influences, and traditional spiritual wisdom to provide guidance and support to individuals facing uncertainty, personal transitions, and life’s challenges.",
       p2: "According to the practitioner, every human being carries an innate destiny path that can occasionally be clouded by unforeseen life setbacks, emotional turmoil, or unseen spiritual burdens. Prof. Kobbyier’s work is characterized by solemn dedication, frank evaluation, and profound respect for every client’s personal journey.",
       pillars: {
         confidentialityTitle: "Absolute Confidentiality",
@@ -486,7 +486,7 @@ export const TRANSLATIONS: Record<"en" | "fr", TranslationSchema> = {
       portraitLabel: "Professeur Kobbyier",
       portraitSub: "Grand · Voyant · Savant Spirituel Africain",
       portraitCaption: "Séances individuelles privées & discrétion absolue",
-      p1: "Le Professeur Kobbyier se présente comme un praticien spirituel africain expérimenté, spécialisé en astrologie, voyance, consultation spirituelle et pratiques spirituelles traditionnelles. Héritier de savoirs ancestraux transmis de génération en génération, il met sa connaissance approfondie des cycles de vie et de la science spirituelle au service de ceux qui traversent le doute ou des épreuves complexes.",
+      p1: "Le Professeur Kobbyier est un praticien spirituel africain expérimenté, spécialisé en astrologie, voyance, consultation spirituelle et pratiques spirituelles traditionnelles. S'appuyant sur des savoirs ancestraux transmis de génération en génération, il associe sa compréhension des cycles de vie, des influences célestes et de la sagesse spirituelle traditionnelle pour guider et accompagner les personnes confrontées aux incertitudes, transitions personnelles et défis de la vie.",
       p2: "Selon le praticien, chaque être humain possède une voie de destinée qui peut être entravée par des blocages imprévus, des tourments affectifs ou des difficultés invisibles. Son approche repose sur un engagement sincère, un diagnostic sans complaisance et un respect profond de chaque personne.",
       pillars: {
         confidentialityTitle: "Confidentialité Absolue",
