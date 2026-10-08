@@ -113,6 +113,19 @@ export interface TranslationSchema {
     disclaimerQuote: string;
     viewDisclaimer: string;
     viewPrivacy: string;
+    bankTransfer: {
+      title: string;
+      intro: string;
+      accountHolderLabel: string;
+      accountHolderValue: string;
+      ibanLabel: string;
+      ibanValue: string;
+      copyBtn: string;
+      copiedSuccess: string;
+      verifyNotice: string;
+      confirmBtn: string;
+      confirmWhatsAppMessage: string;
+    };
   };
   contact: {
     kicker: string;
@@ -362,7 +375,20 @@ export const TRANSLATIONS: Record<"en" | "fr", TranslationSchema> = {
       disclaimerHeader: "Official Client Notice & Ethical Disclaimer",
       disclaimerQuote: "“Spiritual consultation and traditional spiritual practices are offered for personal, cultural, and spiritual purposes. They should not be considered a substitute for qualified medical, psychological, legal, or financial advice. Results are not guaranteed, and individual experiences may vary.”",
       viewDisclaimer: "View Full Ethical Disclaimer & Terms",
-      viewPrivacy: "Client Data Privacy Policy"
+      viewPrivacy: "Client Data Privacy Policy",
+      bankTransfer: {
+        title: "Bank Transfer",
+        intro: "For clients who prefer to make payments by bank transfer, please use the official banking details provided below.",
+        accountHolderLabel: "Account Holder",
+        accountHolderValue: "Samsoudine Gassama",
+        ibanLabel: "IBAN",
+        ibanValue: "PT50001000005777255000115",
+        copyBtn: "Copy IBAN",
+        copiedSuccess: "IBAN copied successfully",
+        verifyNotice: "Please verify the payment details before making any transfer.",
+        confirmBtn: "Payment Confirmation / Contact Us",
+        confirmWhatsAppMessage: "Hello Prof. Kobbyier, I have completed a bank transfer payment and would like to confirm my consultation details."
+      }
     },
     contact: {
       kicker: "Confidential Inquiries",
@@ -610,7 +636,20 @@ export const TRANSLATIONS: Record<"en" | "fr", TranslationSchema> = {
       disclaimerHeader: "Avertissement Déontologique & Légal",
       disclaimerQuote: "« La consultation spirituelle et les pratiques traditionnelles sont proposées à des fins personnelles, culturelles et spirituelles. Elles ne sauraient en aucun cas se substituer à un avis médical, psychologique, juridique ou financier qualifié. Les résultats ne sont pas garantis et dépendent de la réceptivité de chacun. »",
       viewDisclaimer: "Consulter la charte déontologique complète",
-      viewPrivacy: "Politique de confidentialité des données"
+      viewPrivacy: "Politique de confidentialité des données",
+      bankTransfer: {
+        title: "Virement Bancaire",
+        intro: "Pour les clients qui préfèrent effectuer un règlement par virement bancaire, veuillez utiliser les coordonnées bancaires officielles indiquées ci-dessous.",
+        accountHolderLabel: "Titulaire du compte",
+        accountHolderValue: "Samsoudine Gassama",
+        ibanLabel: "IBAN",
+        ibanValue: "PT50001000005777255000115",
+        copyBtn: "Copier l'IBAN",
+        copiedSuccess: "IBAN copié avec succès",
+        verifyNotice: "Veuillez vérifier les coordonnées de paiement avant d'effectuer tout virement.",
+        confirmBtn: "Confirmation de paiement / Nous contacter",
+        confirmWhatsAppMessage: "Bonjour Professeur Kobbyier, j'ai effectué un règlement par virement bancaire et je souhaite vous transmettre la confirmation pour ma consultation."
+      }
     },
     contact: {
       kicker: "Demandes Confidentielles",

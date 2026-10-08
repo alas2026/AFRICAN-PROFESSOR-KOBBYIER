@@ -2,6 +2,7 @@ import React from "react";
 import { CreditCard, AlertCircle, MessageSquare, ArrowDown } from "lucide-react";
 import { useLanguage } from "../context/LanguageContext";
 import { TRANSLATIONS } from "../data/translations";
+import { BankTransfer } from "./BankTransfer";
 
 interface PaymentAndDisclaimerProps {
   onOpenBooking?: () => void;
@@ -81,6 +82,9 @@ export const PaymentAndDisclaimer: React.FC<PaymentAndDisclaimerProps> = ({
             </div>
           </div>
         </div>
+
+        {/* Official Bank Transfer Payment Details */}
+        <BankTransfer />
 
         {/* Official Client Disclaimer Card */}
         <div className="bg-[#12100d] border border-[#d4af37]/20 rounded p-5 sm:p-8">
